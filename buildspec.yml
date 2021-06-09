@@ -7,13 +7,31 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - mvn test 
+      - mvn test
+      - echo "This is for us-east-1" > ue1.txt
+      - echo "This is for eu-west-1" > eu1.txt
+      - echo "This is for us-west-2" > uw2.txt
   post_build:
     commands:
       - echo Build completed on `date`
       - mvn package
 artifacts:
   files:
-    - target/my-app-1.0-SNAPSHOT.jar
-    - appspec.yml
+    - '**/*'
+  secondary-artifacts:
+    BuildArtifact_ue1:
+      files:
+        - target/my-app-1.0-SNAPSHOT.jar
+        - ue1.txt
+      name: BuildArtifact_ue1_output
+    BuildArtifact_eu1:
+      files:
+        - target/my-app-1.0-SNAPSHOT.jar
+        - eu1.txt
+      name: BuildArtifact_eu1_output
+    BuildArtifact_uw2:
+      files:
+        - target/my-app-1.0-SNAPSHOT.jar
+        - uw2.txt
+      name: BuildArtifact_uw2_output
   discard-paths: yes
