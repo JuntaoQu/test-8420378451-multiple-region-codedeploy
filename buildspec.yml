@@ -11,6 +11,8 @@ phases:
       - echo "This is for us-east-1" > ue1.txt
       - echo "This is for eu-west-1" > eu1.txt
       - echo "This is for us-west-2" > uw2.txt
+      - ls
+      - ls target/
   post_build:
     commands:
       - echo Build completed on `date`
@@ -23,15 +25,18 @@ artifacts:
       files:
         - target/my-app-1.0-SNAPSHOT.jar
         - ue1.txt
+        - appspec.yml
       name: BuildArtifact_ue1_output
     BuildArtifact_eu1:
       files:
         - target/my-app-1.0-SNAPSHOT.jar
         - eu1.txt
+        - appspec.yml
       name: BuildArtifact_eu1_output
     BuildArtifact_uw2:
       files:
         - target/my-app-1.0-SNAPSHOT.jar
         - uw2.txt
+        - appspec.yml
       name: BuildArtifact_uw2_output
   discard-paths: yes
