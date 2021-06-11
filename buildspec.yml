@@ -11,6 +11,9 @@ phases:
       - echo "This is for us-east-1" > ue1.txt
       - echo "This is for eu-west-1" > eu1.txt
       - echo "This is for us-west-2" > uw2.txt
+      - mkdir appspec_ue1 && cp appspec_ue1.yml appspec_ue1/appspec.yml
+      - mkdir appspec_eu1 && cp appspec_eu1.yml appspec_eu1/appspec.yml
+      - mkdir appspec_uw2 && cp appspec_uw2.yml appspec_uw2/appspec.yml
       - ls
       - ls target/
   post_build:
@@ -25,18 +28,21 @@ artifacts:
       files:
         - target/my-app-1.0-SNAPSHOT.jar
         - ue1.txt
-        - appspec.yml
+        - ue1_deploy.sh
+        - appspec_ue1/appspec.yml
       name: BuildArtifact_ue1_output
     BuildArtifact_eu1:
       files:
         - target/my-app-1.0-SNAPSHOT.jar
         - eu1.txt
-        - appspec.yml
+        - eu1_deploy.sh
+        - appspec_eu1/appspec.yml
       name: BuildArtifact_eu1_output
     BuildArtifact_uw2:
       files:
         - target/my-app-1.0-SNAPSHOT.jar
         - uw2.txt
-        - appspec.yml
+        - uw2_deploy.sh
+        - appspec_uw2/appspec.yml
       name: BuildArtifact_uw2_output
   discard-paths: yes
