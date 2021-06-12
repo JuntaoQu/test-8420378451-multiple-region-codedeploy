@@ -6,3 +6,4 @@ files:
 hooks:
   ApplicationStart:
     - location: uw2_deploy.sh
+    - runas: ec2-user
