@@ -12,8 +12,11 @@ phases:
       - echo "This is for eu-west-1" > eu1.txt
       - echo "This is for us-west-2" > uw2.txt
       - mkdir appspec_ue1 && cp appspec_ue1.yml appspec_ue1/appspec.yml
+      - mv ue1_deploy.sh appspec_ue1
       - mkdir appspec_eu1 && cp appspec_eu1.yml appspec_eu1/appspec.yml
+      - mv eu1_deploy.sh appspec_eu1
       - mkdir appspec_uw2 && cp appspec_uw2.yml appspec_uw2/appspec.yml
+      - mv uw2_deploy.sh appspec_uw2
       - ls
       - ls target/
   post_build:
