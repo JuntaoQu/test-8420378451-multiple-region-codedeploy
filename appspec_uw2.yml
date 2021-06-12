@@ -5,5 +5,5 @@ files:
     destination: /tmp
 hooks:
   ApplicationStart:
-    - location: ./uw2_deploy.sh
-    - runas: ec2-user
+    - location: /uw2_deploy.sh
+      runas: ec2-user
