@@ -29,20 +29,22 @@ artifacts:
         - target/my-app-1.0-SNAPSHOT.jar
         - ue1.txt
         - ue1_deploy.sh
-        - appspec_ue1/appspec.yml
+        - appspec.yml
       name: BuildArtifact_ue1_output
+      base-directory: appspec_ue1
     BuildArtifact_eu1:
       files:
         - target/my-app-1.0-SNAPSHOT.jar
         - eu1.txt
         - eu1_deploy.sh
-        - appspec_eu1/appspec.yml
+        - appspec.yml
       name: BuildArtifact_eu1_output
+      base-directory: appspec_eu2
     BuildArtifact_uw2:
       files:
         - target/my-app-1.0-SNAPSHOT.jar
         - uw2.txt
         - uw2_deploy.sh
-        - appspec_uw2/appspec.yml
+        - appspec.yml
       name: BuildArtifact_uw2_output
-  discard-paths: yes
+      base-directory: appspec_uw2
