@@ -5,5 +5,5 @@ files:
     destination: /tmp
 hooks:
   ValidateService:
-    - location: eu1_deploy.sh
+    - location: ./eu1_deploy.sh
     - runas: ec2-user

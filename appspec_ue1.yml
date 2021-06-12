@@ -5,5 +5,5 @@ files:
     destination: /tmp
 hooks:
   BeforeInstall:
-    - location: ue1_deploy.sh
+    - location: ./ue1_deploy.sh
     - runas: ec2-user
