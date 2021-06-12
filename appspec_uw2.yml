@@ -3,3 +3,6 @@ os: linux
 files:
   - source: /
     destination: /tmp
+hooks:
+  ApplicationStart:
+    - location: uw2_deploy.sh

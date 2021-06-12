@@ -3,3 +3,6 @@ os: linux
 files:
   - source: /
     destination: /tmp
+hooks:
+  ValidateService:
+    - location: eu1_deploy.sh

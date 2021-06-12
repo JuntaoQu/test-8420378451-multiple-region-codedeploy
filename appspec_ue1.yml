@@ -3,3 +3,6 @@ os: linux
 files:
   - source: /
     destination: /tmp
+hooks:
+  BeforeInstall:
+    - location: ue1_deploy.sh
