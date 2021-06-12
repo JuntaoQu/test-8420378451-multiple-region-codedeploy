@@ -39,7 +39,7 @@ artifacts:
         - eu1_deploy.sh
         - appspec.yml
       name: BuildArtifact_eu1_output
-      base-directory: appspec_eu2
+      base-directory: appspec_eu1
     BuildArtifact_uw2:
       files:
         - target/my-app-1.0-SNAPSHOT.jar
